@@ -1,5 +1,5 @@
 {
-    "name": "arthurkirkosa/guzzle-description-loader",
+    "name": "fatal-error/guzzle-description-loader",
     "description": "Load guzzle service description from various file formats",
     "require": {
         "php": "^7.0|^8.0",
