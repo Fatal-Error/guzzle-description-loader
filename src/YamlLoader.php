@@ -15,9 +15,20 @@ use Guzzle\Service\Loader\FileLoader;
 use Symfony\Component\Yaml\Parser as YamlParser;
 use Symfony\Component\Yaml\Exception\ParseException;
 
+/**
+ * Class YamlLoader.
+ *
+ * @package Guzzle\Service\Loader
+ */
 class YamlLoader extends FileLoader
 {
-    private $yamlParser;
+  
+    /**
+     * The Yaml Parser.
+     *
+     * @var \Symfony\Component\Yaml\Parser
+     */
+    private YamlParser $yamlParser;
 
     /**
      * {@inheritdoc}
@@ -35,8 +46,11 @@ class YamlLoader extends FileLoader
 
         return $configValues;
     }
-
-    public function supports($resource, $type = null)
+  
+    /**
+     * {@inheritdoc}
+     */
+    public function supports(mixed $resource, string $type = null): bool
     {
         return is_string($resource) && 'yml' === pathinfo(
             $resource,

@@ -13,10 +13,18 @@ namespace Guzzle\Service\Loader;
 
 use Symfony\Component\Config\Loader\FileLoader as BaseFileLoader;
 
+/**
+ * Class FileLoader.
+ *
+ * @package Guzzle\Service\Loader
+ */
 abstract class FileLoader extends BaseFileLoader
 {
-
-    public function load($resource, $type = null)
+  
+    /**
+     * {@inheritdoc}
+     */
+    public function load(mixed $resource, string $type = null): mixed
     {
         if (!stream_is_local($resource)) {
             throw new \Exception(sprintf('This is not a local file "%s".', $resource));
@@ -38,10 +46,14 @@ abstract class FileLoader extends BaseFileLoader
         return $configValues;
     }
 
-    /*
+    /**
+     * Load Resource.
+     *
      * @param string $resource
+     *   The resource name.
      *
      * @return array
+     *   An associative array containing the loaded resource.
      *
      * @throws InvalidResourceException If stream content has an invalid format.
      */

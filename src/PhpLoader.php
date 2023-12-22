@@ -13,6 +13,11 @@ namespace Guzzle\Service\Loader;
 
 use Guzzle\Service\Loader\FileLoader;
 
+/**
+ * Class PhpLoader.
+ *
+ * @package Guzzle\Service\Loader
+ */
 class PhpLoader extends FileLoader
 {
     /**
@@ -22,8 +27,11 @@ class PhpLoader extends FileLoader
     {
         return require $resource;
     }
-
-    public function supports($resource, $type = null)
+  
+    /**
+     * {@inheritdoc}
+     */
+    public function supports(mixed $resource, string $type = null): bool
     {
         return is_string($resource) && 'php' === pathinfo(
             $resource,

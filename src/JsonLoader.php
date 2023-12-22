@@ -13,6 +13,11 @@ namespace Guzzle\Service\Loader;
 
 use Guzzle\Service\Loader\FileLoader;
 
+/**
+ * Class JsonLoader.
+ *
+ * @package Guzzle\Service\Loader
+ */
 class JsonLoader extends FileLoader
 {
     /**
@@ -55,8 +60,11 @@ class JsonLoader extends FileLoader
                 return 'Unknown error';
         }
     }
-
-    public function supports($resource, $type = null)
+  
+    /**
+     * {@inheritdoc}
+     */
+    public function supports(mixed $resource, string $type = null): bool
     {
         return is_string($resource) && 'json' === pathinfo(
             $resource,
