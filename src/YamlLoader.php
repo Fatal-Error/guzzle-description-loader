@@ -25,10 +25,8 @@ class YamlLoader extends FileLoader
   
     /**
      * The Yaml Parser.
-     *
-     * @var \Symfony\Component\Yaml\Parser
      */
-    private YamlParser $yamlParser;
+    private $yamlParser;
 
     /**
      * {@inheritdoc}
