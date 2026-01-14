@@ -64,7 +64,7 @@ class JsonLoader extends FileLoader
     /**
      * {@inheritdoc}
      */
-    public function supports(mixed $resource, string $type = null): bool
+    public function supports(mixed $resource, ?string $type = null): bool
     {
         return is_string($resource) && 'json' === pathinfo(
             $resource,
