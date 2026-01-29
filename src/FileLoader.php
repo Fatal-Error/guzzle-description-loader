@@ -24,7 +24,7 @@ abstract class FileLoader extends BaseFileLoader
     /**
      * {@inheritdoc}
      */
-    public function load(mixed $resource, string $type = null): mixed
+    public function load(mixed $resource, ?string $type = null): mixed
     {
         if (!stream_is_local($resource)) {
             throw new \Exception(sprintf('This is not a local file "%s".', $resource));
